@@ -4,8 +4,9 @@ import {
     Stack, 
     Typography 
 } from '@mui/material'
-import SuccessAlert from './SuccessAlert'
-import FailureAlert from './FailureAlert'
+import SuccessAlert from '../core-components/SuccessAlert'
+import FailureAlert from '../core-components/FailureAlert'
+import MuiCircularProgress from '../core-components/MuiCircularProgress'
 
 const MuiLoading = ({isProcessing , isSuccess, isDone, retry}) => {
   return (
@@ -17,10 +18,7 @@ const MuiLoading = ({isProcessing , isSuccess, isDone, retry}) => {
     >
         {
             isProcessing  && !isDone ? 
-                <>
-                    <CircularProgress color='primary' />
-                    <Typography>Processing ... </Typography>
-                </>
+               <MuiCircularProgress loadingText={'Processing'}/>
             : isDone && isSuccess ? 
                <SuccessAlert 
                     message={'Account created sucessfully'}

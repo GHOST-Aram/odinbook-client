@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from '../core-components/Form'
 import MuiTextField from '../core-components/MuiTextField'
 import MuiButton from '../core-components/MuiButton'
-import MuiLoading from '../core-components/MuiLoading'
+import MuiLoading from './MuiLoading'
 import { post } from '../utils/fetch'
 
 const SignUpForm = () => {
