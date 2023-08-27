@@ -13,7 +13,7 @@ const SignUpForm = ( { displayFailure, setIsProcessing, displaySuccess}) => {
     const [password2, setPassword2] = useState('')
 
 
-    const signUp = async() =>{
+    const sendSignUpRequest = async() =>{
         setIsProcessing(true)
         try {
             const result = await post('http://localhost:8000/accounts/user', {
@@ -71,7 +71,7 @@ const SignUpForm = ( { displayFailure, setIsProcessing, displaySuccess}) => {
 
             <MuiButton 
                 name={'Sign Up'}
-                handleClick={signUp}
+                handleClick={sendSignUpRequest}
             />
         </Form> 
     )
