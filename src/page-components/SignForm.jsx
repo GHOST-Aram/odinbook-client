@@ -4,15 +4,13 @@ import MuiTextField from '../core-components/MuiTextField'
 import MuiButton from '../core-components/MuiButton'
 import { post } from '../utils/fetch'
 
-const SignUpForm = ( { setIsDone, setIsProcessing, setIsSuccess}) => {
+const SignUpForm = ( { displayError, setIsProcessing, displaySuccess}) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
-
-    
 
 
     const signUp = async() =>{
@@ -28,12 +26,10 @@ const SignUpForm = ( { setIsDone, setIsProcessing, setIsSuccess}) => {
             const userId = result.userId
     
             if(userId) {
-                setIsSuccess(true)
-                setIsDone(true)
+               displaySuccess()
             }   
         } catch (error) {
-            setIsDone(true)
-            setIsSuccess(false)
+            displayError()
         }
     }
 

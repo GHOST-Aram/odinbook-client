@@ -14,15 +14,25 @@ const SignUp = () => {
         setIsProcessing(false)
         setIsDone(false)
     }
+
+    const displaySucessAlert = () =>{
+        setIsSuccess(true)
+        setIsDone(true)
+    }
+
+    const displayErrorAlert = () =>{
+        setIsDone(true)
+        setIsSuccess(false)
+    }
     return (
         <Container>
             <MuiPaper>
                 {
                     !isProcessing ?
                     <SignUpForm 
-                        setIsDone={setIsDone}
+                        displayError={displayErrorAlert}
                         setIsProcessing={setIsProcessing}
-                        setIsSuccess={setIsSuccess}
+                        displaySuccess={displaySucessAlert}
                     />
                     : <MuiLoading 
                         isProcessing={isProcessing}
