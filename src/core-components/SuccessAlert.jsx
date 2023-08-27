@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, AlertTitle, Button } from '@mui/material'
+import { Alert, Button } from '@mui/material'
 
 const SuccessAlert = ({ message, actionName }) => {
   return (

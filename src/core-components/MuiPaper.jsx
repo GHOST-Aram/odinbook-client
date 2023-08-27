@@ -1,6 +1,5 @@
 import React from 'react'
 import { Paper } from '@mui/material'
-import { Margin } from '@mui/icons-material'
 
 const MuiPaper = ({children}) => {
   return (
