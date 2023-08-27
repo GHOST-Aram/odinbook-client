@@ -12,7 +12,7 @@ const SignUp = () => {
     const [isSuccess, setIsSuccess] = useState(false)
     const [isDone, setIsDone] = useState(false)
 
-    const displayError = () =>{
+    const displayFailure = () =>{
         setIsDone(true)
         setIsSuccess(false)
     }
@@ -36,7 +36,7 @@ const SignUp = () => {
                 {
                     !isProcessing ?
                     <SignUpForm 
-                        displayError={displayError}
+                        displayFailure={displayFailure}
                         setIsProcessing={setIsProcessing}
                         displaySuccess={displaySucess}
                     />

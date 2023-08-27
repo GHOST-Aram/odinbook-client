@@ -4,7 +4,7 @@ import MuiTextField from '../core-components/MuiTextField'
 import MuiButton from '../core-components/MuiButton'
 import { post } from '../utils/fetch'
 
-const SignUpForm = ( { displayError, setIsProcessing, displaySuccess}) => {
+const SignUpForm = ( { displayFailure, setIsProcessing, displaySuccess}) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
@@ -29,7 +29,7 @@ const SignUpForm = ( { displayError, setIsProcessing, displaySuccess}) => {
                displaySuccess()
             }   
         } catch (error) {
-            displayError()
+            displayFailure()
         }
     }
 
