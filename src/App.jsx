@@ -1,10 +1,10 @@
 import './App.css';
-import SignUpPage from './pages/SignUpPage';
+import SignUp from './pages/SignUp';
 
-function App() {
+const  App = () => {
 	return (
 		<div className="App">
-			<SignUpPage />
+			<SignUp />
 		</div>
 	);
 }
