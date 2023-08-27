@@ -3,6 +3,7 @@ import Form from '../core-components/Form'
 import MuiTextField from '../core-components/MuiTextField'
 import MuiButton from '../core-components/MuiButton'
 import MuiLoading from '../core-components/MuiLoading'
+import { post } from '../utils/fetch'
 
 const SignUpForm = () => {
     const [firstName, setFirstName] = useState('')
@@ -20,12 +21,30 @@ const SignUpForm = () => {
 
     const signUp = async() =>{
         setIsProcessing(true)
-        setTimeout(() =>{
-            setIsSuccess(true)
+        try {
+            const result = await post('http://localhost:8000/accounts/user', {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                password: password
+            })
+    
+            const userId = result.userId
+    
+            if(userId) {
+                setIsSuccess(true)
+                setIsDone(true)
+            }   
+        } catch (error) {
             setIsDone(true)
-        }, 1000)
+            setIsSuccess(false)
+        }
     }
 
+    const retrySignUp = () =>{
+        setIsProcessing(false)
+        setIsDone(false)
+    }
     return (
         <>
         {
@@ -74,6 +93,7 @@ const SignUpForm = () => {
                 isProcessing={isProcessing}
                 isSuccess = {isSuccess}
                 isDone={isDone}
+                retry = {retrySignUp}
             />
         }
         </>

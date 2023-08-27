@@ -15,9 +15,10 @@ const Form = ({children, heading}) => {
 		width={'100%'}
 	>
         <Typography 
-            variant='h5'
+            variant='h4'
             component={'h1'}
             gutterBottom
+			color={'primary'}
         >{heading}</Typography>
         {children}
     </Box>

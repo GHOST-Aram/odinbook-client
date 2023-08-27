@@ -1,8 +1,8 @@
 import React from 'react'
-import { Alert, AlertTitle, Button } from '@mui/material'
+import { Alert, Button } from '@mui/material'
 
 
-const FailureAlert = ({ message, actionName }) => {
+const FailureAlert = ({ message, actionName, action }) => {
     return (
         <Alert 
             aria-label='failure alert' 
@@ -13,6 +13,7 @@ const FailureAlert = ({ message, actionName }) => {
                 <Button 
                     color='inherit' 
                     size='small'
+                    onClick={action}
                 >
                     { actionName }
                 </Button>

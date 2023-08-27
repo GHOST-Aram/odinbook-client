@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import FailureAlert from "./FailureAlert";
 
 describe('Failure alert', () =>{
@@ -22,6 +22,20 @@ describe('Failure alert', () =>{
 
         const retryBtn = screen.getByRole('button', {name: /Try Again/i })
         expect(retryBtn).toBeInTheDocument()
+    })
+
+    test('Renders action function is called when action button is clicked', () =>{
+        const handleClick = jest.fn()
+        render(<FailureAlert 
+            message={'Failed to create account'} 
+            actionName = 'Try Again'
+            action = {handleClick}
+        />)
+
+        const actionBtn = screen.getByRole('button', { name : /try again/i})
+        fireEvent.click(actionBtn)
+
+        expect(handleClick).toHaveBeenCalledTimes(1)
     })
 
 })

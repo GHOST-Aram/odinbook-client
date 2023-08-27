@@ -9,7 +9,7 @@ import {
 import SuccessAlert from './SuccessAlert'
 import FailureAlert from './FailureAlert'
 
-const MuiLoading = ({isProcessing , isSuccess, isDone}) => {
+const MuiLoading = ({isProcessing , isSuccess, isDone, retry}) => {
   return (
     <Stack 
         spacing={4} 
@@ -32,6 +32,7 @@ const MuiLoading = ({isProcessing , isSuccess, isDone}) => {
                 <FailureAlert 
                     message={'Sign Up failed'}
                     actionName={'Try Again'}
+                    action={retry}
                 />
         }
     </Stack>
