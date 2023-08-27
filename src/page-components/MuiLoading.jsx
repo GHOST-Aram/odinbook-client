@@ -11,7 +11,7 @@ const MuiLoading = (props) => {
         isProcessing , 
         isSuccess, 
         isDone, 
-        handlFailure,
+        handleFailure,
         handleSuccess
     } = props
     return (
@@ -34,7 +34,7 @@ const MuiLoading = (props) => {
                     <FailureAlert 
                         message={'Sign Up failed'}
                         actionName={'Try Again'}
-                        action={handlFailure}
+                        action={handleFailure}
                     />
             }
         </Stack>

@@ -25,6 +25,7 @@ const SignUp = () => {
     const retrySignUp = () =>{
         setIsProcessing(false)
         setIsDone(false)
+        console.log({isProcessing, isDone})
     }
 
     const goToLogin = () =>{
