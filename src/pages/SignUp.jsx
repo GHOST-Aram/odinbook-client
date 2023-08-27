@@ -28,7 +28,7 @@ const SignUp = () => {
     }
 
     const goToLogin = () =>{
-        navigate('login', { replace: true })
+        navigate('/', { replace: true })
     }
     return (
         <Container>
