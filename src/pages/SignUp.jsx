@@ -15,12 +15,12 @@ const SignUp = () => {
         setIsDone(false)
     }
 
-    const displaySucessAlert = () =>{
+    const displaySucess = () =>{
         setIsSuccess(true)
         setIsDone(true)
     }
 
-    const displayErrorAlert = () =>{
+    const displayError = () =>{
         setIsDone(true)
         setIsSuccess(false)
     }
@@ -30,9 +30,9 @@ const SignUp = () => {
                 {
                     !isProcessing ?
                     <SignUpForm 
-                        displayError={displayErrorAlert}
+                        displayError={displayError}
                         setIsProcessing={setIsProcessing}
-                        displaySuccess={displaySucessAlert}
+                        displaySuccess={displaySucess}
                     />
                     : <MuiLoading 
                         isProcessing={isProcessing}
