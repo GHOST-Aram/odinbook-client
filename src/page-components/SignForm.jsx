@@ -13,16 +13,23 @@ const SignUpForm = () => {
     const [password2, setPassword2] = useState('')
 
     //Monitor progress
-    const [isSending, setIsSending] = useState(false)
+    const [isProcessing, setIsProcessing] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+    const [isDone, setIsDone] = useState(false)
+
 
     const signUp = async() =>{
-        setIsSending(true)
+        setIsProcessing(true)
+        setTimeout(() =>{
+            setIsSuccess(true)
+            setIsDone(true)
+        }, 1000)
     }
 
     return (
         <>
         {
-            !isSending ?
+            !isProcessing?
             <Form heading={'Sign Up'}>
                 <MuiTextField 
                     label={'First Name'}
@@ -63,7 +70,11 @@ const SignUpForm = () => {
                     handleClick={signUp}
                 />
             </Form> 
-            : <MuiLoading />
+            : <MuiLoading 
+                isProcessing={isProcessing}
+                isSuccess = {isSuccess}
+                isDone={isDone}
+            />
         }
         </>
     )

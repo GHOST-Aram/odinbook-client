@@ -7,8 +7,8 @@ const MuiPaper = ({children}) => {
     <Paper 
         sx={{
             width:{
-                xs: '100%',
-                sm: '100%',
+                xs: '90%',
+                sm: '90%',
                 md: '60%',
                 lg:'50%',
                 xl: '30%'
@@ -17,6 +17,7 @@ const MuiPaper = ({children}) => {
             marginInline: 'auto'
             
         }}
+        aria-live='polite'
     >{children}</Paper>
   )
 }
