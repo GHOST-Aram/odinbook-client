@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert, Button } from '@mui/material'
 
-const SuccessAlert = ({ message, actionName }) => {
+const SuccessAlert = ({ message, actionName, action }) => {
   return (
     <Alert 
         aria-label='success alert' 
@@ -9,7 +9,11 @@ const SuccessAlert = ({ message, actionName }) => {
         onClose={()=>{}}
         variant='filled'
         action = {
-            <Button color='inherit' size='small'>{actionName}</Button>
+            <Button 
+                color='inherit' 
+                size='small'
+                onClick={action}
+            >{actionName}</Button>
         }
             
     >
