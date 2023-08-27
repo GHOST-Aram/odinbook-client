@@ -22,10 +22,9 @@ const SignUp = () => {
         setIsDone(true)
     }
     
-    const retrySignUp = () =>{
+    const rerenderSignUpForm = () =>{
         setIsProcessing(false)
         setIsDone(false)
-        console.log({isProcessing, isDone})
     }
 
     const goToLogin = () =>{
@@ -45,7 +44,7 @@ const SignUp = () => {
                         isProcessing={isProcessing}
                         isSuccess = {isSuccess}
                         isDone={isDone}
-                        handleFailure = {retrySignUp}
+                        handleFailure = {rerenderSignUpForm}
                         handleSuccess = {goToLogin}
                     />
                 }
