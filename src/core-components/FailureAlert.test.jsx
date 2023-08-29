@@ -6,7 +6,7 @@ describe('Failure alert', () =>{
         render(
             <FailureAlert 
                 message={'Failed to create account'} 
-                action = 'Try again'
+                actionName = 'Try again'
             />
         )
         
@@ -25,7 +25,7 @@ describe('Failure alert', () =>{
     })
 
     test('Renders action function is called when action button is clicked', () =>{
-        const handleClick = jest.fn()
+        const handleClick = jest.fn().mockImplementation()
         render(<FailureAlert 
             message={'Failed to create account'} 
             actionName = 'Try Again'

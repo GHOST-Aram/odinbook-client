@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-const MuiButton = ({handleClick, name, size}) => {
+const MuiButton = ({handleClick, name, type}) => {
   return (
     <Button 
         variant='contained'
         onClick={handleClick}
 		color='primary'
         fullWidth
-		size= {size || 'medium'}
+		type={type || 'button'}
+		size= {'medium'}
     >
         { name }
     </Button>

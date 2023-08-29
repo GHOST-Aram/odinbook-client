@@ -1,10 +1,10 @@
 import React from 'react'
 import { 
     Box,
-    Typography
+    FormLabel, FormGroup
 } from '@mui/material'
 
-const Form = ({children, heading}) => {
+const Form = ({children, label, onSubmit}) => {
   return (
     <Box 
 		component={'form'} 
@@ -13,14 +13,20 @@ const Form = ({children, heading}) => {
 		alignItems={'center'}
 		gap={2}
 		width={'100%'}
+		onSubmit={onSubmit}
 	>
-        <Typography 
-            variant='h4'
-            component={'h1'}
-            gutterBottom
-			color={'primary'}
-        >{heading}</Typography>
+        <FormLabel component={'h5'} color='primary'>{label}</FormLabel>
+        <FormGroup
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap:2,
+					width: '100%'
+                }}
+				
+            >
         {children}
+        </FormGroup>
     </Box>
   )
 }
