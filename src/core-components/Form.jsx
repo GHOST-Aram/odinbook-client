@@ -8,6 +8,7 @@ const Form = ({children, label, onSubmit}) => {
   return (
     <Box 
 		component={'form'} 
+		method='post'
 		display={'flex'} 
 		flexDirection={'column'}
 		alignItems={'center'}

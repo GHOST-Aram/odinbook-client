@@ -28,7 +28,7 @@ const SignUp = () => {
     }
 
     const goToLogin = () =>{
-        navigate('/', { replace: true })
+        navigate('login', { replace: true })
     }
     return (
         <Container>
@@ -44,8 +44,10 @@ const SignUp = () => {
                         isProcessing={isProcessing}
                         isSuccess = {isSuccess}
                         isDone={isDone}
-                        handleFailure = {rerenderSignUpForm}
-                        handleSuccess = {goToLogin}
+                        failureRedirect = {rerenderSignUpForm}
+                        sucessRedirect = {goToLogin}
+                        successMessage =  {'Account Created Success Fully'}
+                        failureMessage = {'Failed to create account, Try again'}
                     />
                 }
             </MuiPaper>

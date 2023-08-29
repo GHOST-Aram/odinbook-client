@@ -11,8 +11,10 @@ const MuiLoading = (props) => {
         isProcessing , 
         isSuccess, 
         isDone, 
-        handleFailure,
-        handleSuccess
+        failureRedirect,
+        successRedirect,
+        successMessage,
+        failureMessage,
     } = props
     return (
         <Stack 
@@ -26,15 +28,15 @@ const MuiLoading = (props) => {
                 <MuiCircularProgress loadingText={'Processing'}/>
                 : isDone && isSuccess ? 
                 <SuccessAlert 
-                        message={'Account created sucessfully'}
-                        actionName={'Go to Login'}
-                        action={handleSuccess}
+                        message={successMessage}
+                        actionName={'Proceede'}
+                        action={successRedirect}
                     />
                 : (isDone && !isSuccess) && 
                     <FailureAlert 
-                        message={'Sign Up failed'}
+                        message={failureMessage}
                         actionName={'Try Again'}
-                        action={handleFailure}
+                        action={failureRedirect}
                     />
             }
         </Stack>
