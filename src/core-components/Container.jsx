@@ -1,9 +1,12 @@
 import React from 'react'
 import { Box } from '@mui/material'
 
-const Container = ({children}) => {
+const Container = ({children, sx}) => {
   return (
-    <Box component={'div'}>{children}</Box>
+    <Box 
+    	component={'div'}
+		sx={sx || null}
+	>{children}</Box>
   )
 }
 
