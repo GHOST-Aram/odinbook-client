@@ -27,7 +27,6 @@ const ProfileHeader = ({ name, image }) => {
 		<Typography
 			variant='h5'
 			component={'h2'}
-			colo
 		>
 			{ name }
 		</Typography>

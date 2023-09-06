@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Container from '../core-components/Container'
 import MuiPaper from '../core-components/MuiPaper'
 import LoginForm from '../page-components/LoginForm'
-import MuiLoading from '../page-components/MuiLoading'
+import MuiLoading from '../core-components/MuiLoading'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {

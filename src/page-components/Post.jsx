@@ -4,6 +4,8 @@ import ProfileHeader from '../core-components/ProfileHeader'
 import Image from '../core-components/Image'
 import Divider from '@mui/material/Divider'
 import Paragraph from '../core-components/Paragraph'
+import EngagementOptions from '../core-components/EngagementOptions'
+
 const Post = ({post}) => {
   return (
     <Container sx={{
@@ -30,6 +32,8 @@ const Post = ({post}) => {
 			className={'post-img'}
 		/>
         <Paragraph>{post.content.text}</Paragraph>
+		<Divider  orientation={'horizontal'}/>
+		<EngagementOptions />
 		<Divider  orientation={'horizontal'}/>
     </Container>
   )

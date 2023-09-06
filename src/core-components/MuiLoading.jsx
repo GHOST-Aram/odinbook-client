@@ -2,9 +2,9 @@ import React from 'react'
 import { 
     Stack, 
 } from '@mui/material'
-import SuccessAlert from '../core-components/SuccessAlert'
-import FailureAlert from '../core-components/FailureAlert'
-import MuiCircularProgress from '../core-components/MuiCircularProgress'
+import SuccessAlert from './SuccessAlert'
+import FailureAlert from './FailureAlert'
+import MuiCircularProgress from './MuiCircularProgress'
 
 const MuiLoading = (props) => {
     const {
