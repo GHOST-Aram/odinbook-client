@@ -11,7 +11,7 @@ const ProfileHeader = ({ name, image }) => {
 		display={'flex'} 
 		alignItems={'center'}
 		spacing={2}
-		bgcolor={'text.secondary'}
+		bgcolor={'primary.main'}
 	>
 		
 		<Avatar
@@ -27,6 +27,7 @@ const ProfileHeader = ({ name, image }) => {
 		<Typography
 			variant='h5'
 			component={'h2'}
+			color={'white'}
 		>
 			{ name }
 		</Typography>

@@ -17,3 +17,9 @@ code {
   min-width: 300px;
 }
 
+nav a.active{
+  color: 'white';
+}
+nav a{
+  color: rgb(17, 16, 16);
+}

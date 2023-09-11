@@ -29,6 +29,8 @@ const Navbar = () => {
         navigate('/posts')
     }
 
+    const navLinkStyles = ({isActive}) => isActive && 'active'
+
     return (
         <AppBar>
             <Toolbar 
@@ -45,24 +47,24 @@ const Navbar = () => {
                 >
                     OdinBook
                 </Button>
-                <Stack direction={'row'} spacing={4}>
+                <Stack direction={'row'} spacing={4} component={'nav'}>
                     <NavLink 
-                        style={{
-                            color: 'white'
-                        }}
+                        className={` navigation`}
                         to={'/posts'}
                     >
                         <IconButton size='large' color='inherit'><HomeRounded /></IconButton>
                     </NavLink>
                     <NavLink
                         to={'/people'}
+                        className={`navigation`}
                     >
-                        <IconButton size='large'><PeopleAltRounded /></IconButton>
+                        <IconButton size='large' color='inherit'><PeopleAltRounded /></IconButton>
                     </NavLink>
                     <NavLink
                         to={'/notifications'}
+                        className={` navigation`}
                     >
-                        <IconButton size='large'><NotificationAddRounded /></IconButton>
+                        <IconButton size='large' color='inherit'><NotificationAddRounded /></IconButton>
                     </NavLink>
                 </Stack>
                 <Stack 
